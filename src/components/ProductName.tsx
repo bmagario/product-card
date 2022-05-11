@@ -10,10 +10,9 @@ export interface IProductNameProps {
 
 export const ProductName = ({ name, className, style }: IProductNameProps) => {
 	const { product } = useContext(productContext);
-	let nameShow = name 
-									? name 
-									: product.name ? product.name : '';
 	return (
-		<span className={ `${styles.productDescription} ${className}` } style={ style } >{ nameShow }</span>
+		<span className={ `${styles.productDescription} ${className}` } style={ style } >
+			{ name ? name : product.name }
+		</span>
 	);
 }
